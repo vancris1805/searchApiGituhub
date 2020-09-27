@@ -71,7 +71,7 @@ class GitHubRepoActivity : AppCompatActivity() {
     }
 
     private fun bindError(error: Boolean){
-        if(error) Snackbar.make(searchRootView,R.string.generic_error_message, Snackbar.LENGTH_INDEFINITE).show()
+        if(error) Snackbar.make(searchRootView,R.string.generic_error_message, Snackbar.LENGTH_LONG).show()
     }
 
     private fun setupSearchList(list: List<Items>) {
