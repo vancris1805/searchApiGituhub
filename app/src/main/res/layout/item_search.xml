@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context="com.github.stars.presentation.SearchRepoActivity">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="@dimen/guideTop" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="@dimen/guideStart" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideEnd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="@dimen/guideEnd" />
+
+    <TextView
+        android:id="@+id/nameRepo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="5dp"
+        android:fontFamily="@font/roboto_black"
+        android:textAllCaps="true"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toStartOf="@+id/image"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toStartOf="@id/guideStart"
+        app:layout_constraintTop_toTopOf="@id/guideTop"
+        tools:text="Nome repository" />
+
+    <ImageView
+        android:id="@+id/starIcon"
+        android:layout_width="12dp"
+        android:layout_height="12dp"
+        android:layout_marginTop="4dp"
+        android:src="@drawable/icon_star"
+        app:layout_constraintStart_toStartOf="@id/nameRepo"
+        app:layout_constraintTop_toBottomOf="@id/nameRepo"
+        app:tint="@color/colorPrimaryDark" />
+
+    <TextView
+        android:id="@+id/qtyStars"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="4dp"
+        android:fontFamily="@font/roboto"
+        android:textAllCaps="true"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@id/starIcon"
+        app:layout_constraintStart_toEndOf="@+id/starIcon"
+        app:layout_constraintTop_toBottomOf="@id/nameRepo"
+        tools:text="100000" />
+
+    <ImageView
+        android:id="@+id/forkIcon"
+        android:layout_width="12dp"
+        android:layout_height="12dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="4dp"
+        android:src="@drawable/ic_fork"
+        app:layout_constraintStart_toEndOf="@id/qtyStars"
+        app:layout_constraintTop_toBottomOf="@id/nameRepo"
+        app:tint="@color/colorPrimaryDark" />
+
+    <TextView
+        android:id="@+id/qtyForks"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="4dp"
+        android:fontFamily="@font/roboto"
+        android:textAllCaps="true"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@id/forkIcon"
+        app:layout_constraintStart_toEndOf="@+id/forkIcon"
+        app:layout_constraintTop_toBottomOf="@id/nameRepo"
+        tools:text="100000" />
+
+
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        app:layout_constraintBottom_toTopOf="@id/authorName"
+        app:layout_constraintEnd_toStartOf="@+id/guideEnd"
+        app:layout_constraintTop_toTopOf="@id/guideTop"
+        tools:srcCompat="@mipmap/ic_launcher_round" />
+
+    <TextView
+        android:id="@+id/authorName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:fontFamily="@font/roboto"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guideEnd"
+        app:layout_constraintTop_toBottomOf="@id/image"
+        tools:text="Vanessa C B Arruda " />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
