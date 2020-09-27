@@ -7,6 +7,7 @@ import androidx.test.espresso.matcher.ViewMatchers.withId
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.rule.ActivityTestRule
 import com.github.stars.presentation.GitHubRepoActivity
+import com.github.stars.presentation.viewmodel.ListGitHubRepoViewModel
 import com.github.stars.repository.model.Items
 import com.github.stars.repository.model.SearchStarsResponse
 import com.google.gson.Gson
@@ -14,15 +15,18 @@ import com.google.gson.reflect.TypeToken
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
+import org.koin.test.KoinTest
 import java.io.BufferedReader
 import java.io.InputStreamReader
 
 @RunWith(AndroidJUnit4::class)
-class ListGitHubRepoActivityTest {
+class GitHubRepoActivityTest : KoinTest{
 
     @Rule
     @JvmField
     val activityRule = ActivityTestRule(GitHubRepoActivity::class.java, true, true)
+
+    lateinit var viewModel: ListGitHubRepoViewModel
 
     val SEARCH_STARS by lazy {
         SearchStarsResponse(
@@ -38,6 +42,23 @@ class ListGitHubRepoActivityTest {
         val mediaResponseRaw = javaClass.classLoader?.getResourceAsStream(filename)
         return BufferedReader(InputStreamReader(mediaResponseRaw))
     }
+
+//    @Before
+//    fun setUp() {
+//        viewModel = mock(ListGitHubRepoViewModel::class.java)
+//
+//        loadKoinModules(module {
+//            viewModel {
+//                viewModel
+//            }
+//        })
+//    }
+//
+//    @After
+//    fun cleanUp() {
+//        stopKoin()
+//    }
+
 
     @Test
     fun setListIsDisplayed() {
