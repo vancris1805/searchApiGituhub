@@ -1,4 +1,4 @@
-# searchApiGituhub
+# searchApiGithub
 
 ## Intro
 
